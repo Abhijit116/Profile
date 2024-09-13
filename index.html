@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            font-family:  sans-serif;
+        }
+        .navbar {
+            background-color: #033676;
+            
+        }
+        .navbar-brand, .nav-link {
+            color: #e0e0e0 !important;
+            padding: 20px;
+            margin-right: 32px;
+            animation: slideLeft 2s ease forwards;
+           
+        }
+        
+        .navbar-brand:hover, .nav-link:hover {
+            color: #00ff44 !important;
+            transition: 1s ease;
+        }
+        .navbar-brand:hover, .nav-link:active{
+            color: #00ff44 ;
+            text-decoration: 2px solid rgb(0, 255, 0);
+            
+            
+        }
+        .header {
+            /* background-color: #162447; */
+            background: linear-gradient(120deg, rgb(123, 45, 123), rgb(99, 99, 208), rgb(53, 229, 229));
+            color: #e0e0e0;
+            padding: 100px 0;
+            text-align: center;
+            
+        }
+        .header img {
+            border-radius: 50%;
+            height: 300px;
+            width: 325px;
+            animation: slideTop 2s ease forwards;
+            
+            
+          
+            
+        }
+        .header img:hover{
+            filter: saturate(1.4) ;
+            filter: contrast(1.4);
+            scale: 1.03;
+            transition: .7s ease;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section h2 {
+            color: #f0f0f0;
+        }
+        .section p {
+            color: #c0c0c0;
+        }
+        .skills{
+            text-align: center;
+           background: linear-gradient(45deg, rgba(20, 20, 136, 0.734), rgb(132, 4, 132));
+           min-height: 100vh;
+           
+        }
+        .skills .container .row {
+            margin-top: 5%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex-wrap: wrap;
+            gap: 1.5rem;
+    }
+    .skills .container .bar {
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(241, 241, 241, 0.516);
+        background: rgba(0, 0, 0, 0.9);
+        transition: 0.2s;
+    }
+
+
+    .skills .container .bar:hover{
+        box-shadow: 0px 3px 20px rgb(255, 255, 255) ;
+        scale: 1.07;
+        transition: .5s ease;
+    }
+
+    .skills .container .bar .info {
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        }
+        .skills img {
+            
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            width: 100px;
+        }
+        .skills .col-md-4 {
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            width: 20%;
+            padding: 0;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: default;
+        }
+        .skills .col-md-4:hover{
+            scale: 1.1;
+            transition: 1s ease;
+            box-shadow: 0 0 20px rgb(0, 255, 26);
+            transform: translateY(5);
+            
+        }
+        h2{
+           padding-top: 5%;
+            font-size: 38px;
+            font-weight: 700;
+            text-align: center;
+            cursor: default;
+        }
+        
+        .project-item {
+           
+            width: 250px;
+            overflow: hidden;
+            border: 1px solid #ffffff;
+            border-radius: 30px;
+            line-height: 20px;
+            
+            
+        }
+        .project-item img {
+            border: 2px solid rgb(255, 81, 0);
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            padding: 5px;
+        }
+        .project-item .card-body {
+            padding: 15px;
+        }
+        .footer {
+            background-color: #122c4c;
+            color: #e0e0e0;
+            padding: 15px ;
+            text-align: center;
+        }
+        @media screen and (max-width: 768px) {
+        .skills .container .row {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+            }
+
+           
+        }
+        @media screen and (min-width: 1000px)
+            {
+                .skills .container .row{
+                    margin-left: 10%;
+                }
+            .skills .container .bar{
+                width: 200px;
+             
+            }
+            }
+        hr{
+            height: 1px;
+            background-color: rgb(160, 237, 243);
+            box-shadow: 0 0 20px rgb(255, 0, 43), 2px 2px 50px rgb(255, 0, 255);
+            
+        }
+        .btn:hover{
+            box-shadow: 0 0 20px rgb(0, 225, 255) ;
+            background-color: white;
+            color: black;
+            border: none;
+            transition: .5s ease;
+        }
+        ul{
+            color: #3f0;
+        }
+        .about p,ul{
+
+            font-size: 20px;
+           
+        }
+        
+        
+        .project-card {
+            transition: transform 0.3s;
+            background: linear-gradient(45deg, rgb(54, 53, 54),#b75bed,  rgb(241, 241, 240));
+            align-items: center;
+            border-radius: 10px;
+            padding-top:15px;
+            
+        }
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 2px -5px 15px rgb(229, 255, 0);
+            transition: .3s ease;
+        }
+        .project-image {
+            height: 250px;
+            width: 200px;
+            border: 2px solid rgb(255, 253, 253);
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .project-image:hover{
+            transform: rotate(-10deg);
+            box-shadow: 3px 2px 15px rgb(0, 0, 0);
+            transition: .5s ease;
+        }
+        .prj-btn{
+            
+            position: absolute;
+            left: 50%;
+            translate: -50% -50%;
+            margin-top: 20px;
+            box-shadow: 0 0 20px;
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .prj-btn:hover{
+            box-shadow: 1px 5px 20px cyan;
+            border: 2px solid cyan;
+            transform: translateY(-10px);
+            transition: .4s ease;
+        }
+        
+        .icons a{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 50%;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            margin: 30px 15px 30px 0;
+            transition:  .5s ease;
+            animation: slideRight 2.5s ease forwards;
+        }
+        
+        .icons a:hover{
+            background: rgb(6, 6, 6);
+            border: rgb(255, 255, 255);
+            color: #0000ff;
+            box-shadow: 0 0 5px rgb(255, 255, 255),
+            0 0 25px rgb(221, 251, 221), 0 0 50px rgb(255, 255, 255),
+            0 0 100px rgb(255, 255, 255), 0 0 200px rgb(203, 235, 203);
+            scale: 1.2;
+        }
+        .contact-icons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            a{
+                background-color: white;
+                height: 35px;
+                width: 35px;
+                border-radius: 50%;
+                font-size: 20px;
+                text-align: center;
+                padding: 3px;
+                border: 2px solid white;
+                transition: .5s ease;
+                animation: slideBottom 2s ease forwards;
+            }
+            a:hover{
+                background-color: black;
+                box-shadow: -2px -2px 18px cyan;
+                color: #0000ff;
+                border: none;
+                transform: translateY(-5px);
+                scale: 1.2;
+                transition: .5s ease;
+            }
+            
+        }
+        
+        .alin{
+                text-align: center;
+               margin-top: 10vh;
+               list-style: none;
+               text-align: justify;
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideTop {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes slideBottom {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+        
+        .contacts{
+            margin-top: 5%;
+            background: linear-gradient(45deg, rgb(30, 30, 30), rgb(0, 0, 0),  rgb(95, 125, 135));
+        }
+        .resume{
+            
+            font-size: 16px;
+            font-family: Castellar;
+            font-weight: 600;
+            color: #ffffff;
+            border: 2px solid;
+            text-shadow: 0 0 20px rgb(255, 0, 230);
+            
+        }
+        .resume:hover{
+           
+            background: linear-gradient(45deg, black, black, white);
+            border: none;
+            color: white;
+            box-shadow:  5px 5px 18px rgb(68, 68, 68);
+            transition: .6s ease;
+            scale: 1.09;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#" style="font-family: Algerian; font-weight: 100;
+            font-size: 23px;">ABHIJIT</a>
+        <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon " ></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#home"><i class='bx bxs-home'></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class='bx bxs-info-circle'></i>About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills"><i class='bx bx-code-alt'></i>Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects"><i class='bx bxs-edit-alt'></i>Projects</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#contact"><i class='bx bxs-phone-call'></i>Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+    <!-- Header Section -->
+    <header class="header" id="home" style="cursor: default; ">
+        <img src="Abhi.png" alt="Owner's Photo" class="container" ><br><br>
+        <div class="container  maintxt"><h3 style="animation: slideLeft 2s ease forwards;">Hello, It's Me</h3>
+        <h1 class="text-white" style="font-weight: 600; animation: slideBottom 2.2s ease forwards;">Abhijit Rana</h1>
+        <p class="text-light" style="animation: slideLeft 1.5s ease forwards;">Computer Science Student | Frontend Developer</p>
+    </div>
+    <div class="icons">
+       <a href="mailto:abhijitrana116@gmail.com"> <i class='bx bxl-gmail'></i></a>
+       <a href="https://t.me/R_Abhijit"><i class='bx bxl-telegram'></i></a>
+       <a href="https://github.com/Abhijit116"><i class='bx bxl-github'></i></a>
+       <a href=""><i class='bx bxl-linkedin'></i></a>
+       <a href="https://x.com/abhijitrana116"><i class='bx bxl-twitter'></i></a>
+    </div>
+    <div class="container">
+        <a href="https://drive.google.com/file/d/1xSvhNNBeVuiV0KYtZFIeMF-dlojk2HsP/view?usp=drivesdk" class="btn btn-success resume">Get Resume</a>
+    </div>
+    </header>
+    
+
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container" style="cursor: default;">
+            <h2 style="text-align: center; margin-top: -5%;  padding-top: 3px; " class="text-white"><i class='bx bx-user-circle'></i>About <span style="color: cyan; ">Me</span></h2>
+            <p class="text-white">Hello friends, <br>Myself <span style="color:cyan; font-size: 25px; font-family: 'Times New Roman', Times, serif;">Abhijit</span> & I'm a student of B.sc. Computer science in Midnapore Colllege (Autonomous). Currently I'm working in frontend projects.</p>
+            <h4 style="color: rgb(255, 81, 0); text-decoration: underline;">My Education :- </h4><br>
+            <ul>
+                <li>Secondary Education:- <p class="text-white">Corona Batch. Hope no farther details needed.</p></li>
+                <li>Higher Secondary Education:- <p class="text-white">Done my H.S. from Gokulpur BidhanChandra Vidya Bhaban(H.S.) </p></li>
+                <li>Graduation:- <p class="text-white">Persuing B.sc. in Computer Science from Midnapore College (Autonomos).</p></li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+
+        <h2 class="heading"><i class='bx bx-code-alt'></i>My <span style="color: cyan; ">Skills</span> </h2>
+    
+        <div class="container" data-sr-id="24" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: 0.2s linear, opacity 1s cubic-bezier(0.5, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);">
+              <div class="row" id="skillsContainer">
+            <div class="bar">
+                  <div class="info">
+                    <img src="html.jpg" alt="html">
+                    <span>HTML</span>
+                  </div>
+                </div>
+            <div class="bar">
+                  <div class="info">
+                    <img src="css.png" alt="css">
+                    <span>CSS</span>
+                  </div>
+                </div>
+            <div class="bar">
+                  <div class="info">
+                    <img src="python.jpg" alt="python">
+                    <span>Python</span>
+                  </div>
+                </div>
+            <div class="bar">
+                  <div class="info">
+                    <img src="Java.png" alt="java">
+                    <span>Java</span>
+                  </div>
+                </div>
+            <div class="bar">
+                  <div class="info">
+                    <img src="c.jpg" alt="sc">
+                    <span>C</span>
+                  </div>
+                </div>
+            <div class="bar">
+                  <div class="info">
+                    <img src="cpp.png" alt="cpp">
+                    <span>C++</span>
+                  </div>
+                </div></div>
+    </div>
+    </section>
+
+
+
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <h2 class="heading"><i class='bx bxs-edit-alt'></i>My <span style="color: cyan;">Projects</span> </h2>
+        <div class="container project">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card project-card">
+                            <img src="Login.jpg" class="card-img-top project-image" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Easy Login Page</h5>
+                                <p class="card-text">It's a demo login page using HTML and CSS only.  </p>
+                                <a href="https://abhijit116.github.io/Login/" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card project-card">
+                            <img src="Calculator.jpg" class="card-img-top project-image" alt="Project 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Simple Calculator</h5>
+                                <p class="card-text">By using HTML, CSS, & JS. Not responsive yet.</p>
+                                <a href="https://abhijit116.github.io/Calculator/" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card project-card">
+                            <img src="todo.jpg" class="card-img-top project-image" alt="Project 3">
+                            <div class="card-body">
+                                <h5 class="card-title">To-Do box</h5>
+                                <p class="card-text">To-do listing box by using HTML, CSS, & JS.</p>
+                                <a href="https://abhijit116.github.io/Todo/" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="project.html" class="btn btn-dark prj-btn">Show More</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contacts" id="contact">
+        <div class="container">
+            <h2 style="text-align: center;"><i class='bx bxs-phone-call '></i><span style="color: cyan;">Contact</span> Me</h2>
+            <div class="alin text-white">
+                <h4>Let's Work Together</h4>
+                <p>Feel free to reach out! I'd love to here from you.
+                    <br> Contact me or connect me on social media.</p>
+                <div class="contact-list">
+                    <li><i class='bx bxl-gmail text-danger'></i> abhijitrana116@gmail.com</a></li>
+                    <li><i class='bx bx-phone-call text-success'></i> 9474xxxx45</a></li>
+                </div>
+                
+                <div class="contact-icons">
+                    <a href="mailto:abhijitrana116@gmail.com"> <i class='bx bxl-gmail'></i></a>
+                    <a href="https://t.me/R_Abhijit"><i class='bx bxl-telegram'></i></a>
+                    <a href="https://github.com/Abhijit116"><i class='bx bxl-github'></i></a>
+                    <a href=""><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://x.com/abhijitrana116"><i class='bx bxl-twitter'></i></a>
+    
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Abhijit. All rights reserved.</p>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
